@@ -1,0 +1,141 @@
+<%- include('blocks/header', {bot: bot, user: user, auth: auth, db: db}) %>
+<head>
+    <meta property="og:image" content="https://media.discordapp.net/attachments/742063291831943189/765235347130810469/44fecd205565d8f77e85487d5dfdd0a9.png">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nexlist.glitch.me/">
+    <meta property="og:description" content="Nexlist uma botlist completa e facil.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+  .row-left {
+    background: #23272A;
+    height: 100%;
+    width: 5vw;
+  }
+  .row-centerBody {
+    background: #23272A;
+    height: 60px;
+    width: 95vw;
+    margin-left: 5vw;
+    margin-top: -108%;
+    border: 3px solid rgba(0, 0, 0, .1);
+    padding: 16px;
+  }
+  .bg-transparent {
+    background-color: #23272A !important;
+  }
+  .navbar {
+    margin-bottom: 0px;
+    border-bottom: 3px solid rgba(0, 0, 0, .1);
+  }
+  .box-image:hover {
+    animation: imageBox 5s paused;
+  }
+  .box-image {
+    border-radius: 50%;
+  }
+  .box-guilds {
+    padding: 8%;
+  }
+  .row-centerBody p spam {
+    color: purple;
+    font-weight: 900;
+  }
+  
+  .backVefield i {
+    color: #7289DA;
+  }
+  
+  .backVefield {
+    margin-left: 70%;
+    margin-top: -28%;
+  }
+  
+  @keyframes imageBox {
+    0%{
+      border-radius: 13px;
+    }
+    25% {
+      border-radius: 16px;
+    }
+  }
+  
+  .row-centerBody .badge {
+    border-radius: 3px;
+    background-color: purple;
+    border-color: purple;
+  }
+  
+  .row-centerBody .badge:hover {
+    border-radius: 3px;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: white;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="row-left">
+      <% bot.guilds.cache.get("771205605511397388").members.cache.filter(e => e.user.bot === true).forEach(client => {
+        const isVerifield = db.fetch(`Verfield_${client.id}`)
+        if (client.user.id == bot.user.id) return;
+      %>
+      <div class="box-guilds">
+        <a href="admin/<%= client.id %>" class="custom">
+          <% if (client.icon !== null){ %>
+            <img id="box-image" class="box-image" src="<%= client.user.displayAvatarURL({dynamic:true,size:1024,format: 'jpg'}) %>" title="<%= client.user.username %>">
+          <% } else { %>
+            <img class="box-image" src="https://i.imgur.com/2otMem9.png" title="<%= client.user.username %>">
+          <% } %>
+        </a>
+        <% if (isVerifield == 'true') { %>
+          <div class="backVefield">
+            <i>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-patch-check-fll" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984a.5.5 0 0 0-.708-.708L7 8.793 5.854 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+              </svg>
+            </i>
+          </div>
+        <% } %>
+      </div>
+      <div class="row-centerBody">
+        <!--<form action="https://nexlist.glitch.me/admin/remove/<%= client.id %>" method="delete">-->
+          <p>
+            ID <spam><%= client.id %></spam>
+            Owner <spam><%= client.user.tag %></spam>
+            Tag <spam><%= client.user.tag %></spam>
+            <% if (isVerifield == 'true') { %>
+              <a href="https://nexlist.glitch.me/admin/remove/<%= client.id %>" class="badge">Remover</a>
+            <% } %>
+          </p>
+        <!--</form>-->
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+<%- include("blocks/footer") %>

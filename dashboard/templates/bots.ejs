@@ -1,0 +1,335 @@
+<%- include('blocks/header', {bot: bot, user: user, auth: auth, db: db}) %>
+<head>
+    <meta property="og:image" content="https://media.discordapp.net/attachments/742063291831943189/765235347130810469/44fecd205565d8f77e85487d5dfdd0a9.png">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nekzbot.glitch.me/">
+    <meta property="og:description" content="Um Bot com várias funções, comandos e muitas opções">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  * {
+    --dark-cinxo: #23272A;
+    --dark-badge: #7289DA;
+    --line-block: #ccd6f8;
+  }
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+  }
+  .badge-transform {
+    background-color: #7289da !important;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 1px;
+    padding: 5px
+  }
+  .div-badge-transform {
+    margin-top: -74%;
+    margin-left: 65%;
+  }
+  
+  .description-transform {
+    margin-top: 45%;
+    margin-left: -8%;
+  }
+  .users-oxone-page {
+    box-shadow: 1px 4px 6px #AD91FF;
+    background-color: #1D1E28;
+    margin-left: 0%;
+    float: left;
+    color: white;
+    max-width: 200px;
+    display: inline-block;
+  }
+  .bots-page:hover {
+    background-color: black;
+    transform: translateY(-5px);
+    transition: .05s;
+  }
+  .bots-page {
+    background-color: var(--dark-cinxo) !important;
+    box-shadow: 1px 4px 6px var(--dark-cinxo) !important;
+    width: 22%;
+    margin-left: 4%;
+  }
+
+  .image-bots-page {
+    margin-left: -15%;
+    margin-top: -30%;
+  }
+  .guild-image {
+    width: 130px !important;
+    margin-top: -10px;
+    margin-left: -10px;
+    /*border: 1px solid black;*/
+    border-radius: 5%;
+    box-shadow: -6px 7px 8px var(--dark-cinxo) !important;
+  }
+  .current_fox:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .div-pub {
+    margin-top: -54px;
+    position: relative;
+  }
+  .h5-under {
+    margin-top: 3%;
+    margin-left: -6%;
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+  }
+  .h5-pub {
+    text-align: center;
+  }
+  @media screen and (max-width: 600px) {
+        .current_live {
+            width: 100%;
+        }
+    }
+  .div-image-transform {
+    width: 50px;
+    margin-left: 96%;
+    margin-top: -8%;
+  }
+  .image-transform {
+    margin-top: -202px;
+  }
+  p {
+    margin-bottom: -13%;
+  }
+  .CodeMirror pre {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-width: 0;
+    background: 0 0;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    white-space: pre;
+    word-wrap: normal;
+    line-height: inherit;
+    color: inherit;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+}
+  .transformBadge {
+    margin-bottom: -8%;
+  }
+  
+  .badge {
+    margin-bottom: -3%;
+    border-radius: 5px;
+    background-color: var(--dark-badge) !important;
+    border: 1px transparent;
+  }
+  .fix-page {
+    margin-left: 60%;
+    margin-top: -72%;
+    font-size: 1.01em;
+  }
+  .description {
+    margin-top: 45%;
+    margin-bottom: -100%;
+    padding: 0%;
+    font-size: 12px;
+    font-weight: 800;
+    width: 226px;
+    min-width: 226px;
+    max-width: 226px;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+    margin-left: -5%;
+    overflow: hidden !important;
+  }
+  .line {
+    border: 1px solid var(--line-block) !important;
+    opacity: 0.1;
+    margin-top: 108%;
+    margin-bottom: -90%;
+    width: 250px;
+    margin-left: -5%;
+  }
+  .button-footer {
+    margin-top: 94%;
+    margin-bottom: -105%;
+    width: 115% !important;
+  }
+  .button-footer-link {
+    border-radius: 3px;
+    text-decoration: none !important;
+    background-color: #23272A;
+    color: white !important;
+    padding-left: 18%;
+    padding-right: 18%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: -5%;
+  }
+  .button-footer-link:hover {
+    background-color: #007bff !important;
+  }
+  .card-fix {
+    width: 295px !important;
+    float: left !important;
+    color: white !important;
+    height: 300px !important;
+    max-height: 310px !important;
+  }
+  .statusBadge {
+    background-color: transparent !important;
+    font-size: 1.02em;
+  }
+  .navbar {
+    background-color: #23272A !important;
+    margin-bottom: 0;
+  }
+  .head_top {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    heigth: 50%;
+    background-color: #23272A;
+  }
+  .head_top h2 {
+    padding: 4%;
+    font-weight: 600;
+  }
+  .head_top p {
+    margin-top: 8%;
+    margin-left: -42%;
+  }
+  .current_live {
+    margin-top: 5% !important;
+  }
+  .btn_submite {
+    background-color: #7289DA;
+    box-sizing: border-box;
+    border: 1px solid #7289DA;
+    color: white;
+    margin-left: 100%;
+    padding: 2px 5px 3px 5px;
+  }
+  .input_search {
+    background-color: #2C2F33;
+    border-radius: 0px;
+    border: 1px solid #2C2F33;
+    margin-bottom: -17%;
+  }
+</style>
+
+<body style="display: block;">
+    <div class="head_top">
+      <h2>NexList - Bots Para Discord</h2>
+      <p>Procure com as tags abaixo.</p>
+      <form method="post">
+        <input type="text" class="form-control input_search" name="search" placeholder="Buscar">
+        <button type="button" class="btn_submite" tabindex="1">
+          <i><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg></i>
+        </button>
+      </form>
+    </div>
+    <div class="current_fox" style="margin-left: 8%;">
+      <div class="current_live">
+        <% const bots = bot.guilds.cache.get("771205605511397388").members.cache.filter(e => e.user.bot === true); %>
+        <% bots.forEach(client => { %>
+        <% if (client.user.id == bot.user.id) return; 
+          const isVerifield = db.fetch(`Verfield_${client.id}`)
+          if (isVerifield !== 'true') return;
+        %>
+          <div class="jumbotron bots-page card-fix">
+            <div class="image-bots-page">
+              <a href="/bot/<%= client.id %>">
+              <% if(client.user.displayAvatarURL() !== null){ %>
+                <img src="<%= client.user.displayAvatarURL({dynamic: true}) %>" class="guild-image">
+              <% } else { %>
+                <img src="https://i.imgur.com/2otMem9.png" class="guild-image">
+              <% } %>
+              </a>
+            </div>
+            <% const partner = db.fetch(`GuildPartner_${client.id}`) %>
+            <% if (client.id === bot.ownerGuild){ %>
+              <div class="div-image-transform">
+                <img class="image-transform" src="https://cdn.discordapp.com/emojis/757028664826134628.png?v=1" alt="Developer Server" title="Developer Server">
+              </div>
+            <% } else if (client){ %>
+                <div class="div-image-transform">
+                  <img class="image-transform" src="https://media.discordapp.net/attachments/742995945444212797/762533041947672576/760239091752763475.png" alt="Partner" title="Partner">  
+                </div>
+            <% } else if (partner !== true) { %>
+              <div class="div-image-transform">
+                  <img class="image-transform" src="https://cdn.discordapp.com/attachments/704077755255619704/765667753000304670/nekz.png" alt="" title="">  
+              </div>
+            <% } %>
+            <% if (client.id === bot.ownerGuild){ %>
+                <h5 class="h5-under"> <%= client.user.username %> </h5>
+            <% } else if (partner == true){ %>
+                <h5 class="h5-under"> <%= client.user.username %> </h5>
+            <% } else { %>
+                <h2 class="h5-under"> <%= client.user.username %> </h2>
+            <% } %>
+              <p class="fix-page">
+                <% const status = client.presence.status; %>
+                <% if (status == "online"){ %>
+                  <span class="badge badge-secondary statusBadge" style="color: green !important;">Online</span>
+                <% } else if (status == "streaming"){ %>
+                  <span class="badge badge-secondary statusBadge" style="color: purple !important;">Online</span>
+                <% } else if (status == "afk"){ %>
+                  <span class="badge badge-secondary statusBadge" style="color: yellow !important;">Online</span>
+                <% } else if (status == "offline"){ %>
+                  <span class="badge badge-secondary statusBadge" style="color: grey !important;">Offline</span>
+                <% } %>
+                <% const votus = db.fetch(`BotViews_${client.user.id}`)
+                   const botownerID = db.fetch(`BotOwner_${client.user.id}`);
+                   const owner = bot.users.cache.get(botownerID);
+                   const desc = db.fetch(`BotDescmin_${client.user.id}`);
+                   
+                   if (!votus){
+                     var votes = 'N/A';
+                   } else {
+                     votes = votus;
+                   }
+                %>
+                <span class="badge badge-secondary"><%= votes %> Views</span><br>
+                <span class="badge badge-secondary transformBadge">N/A Servidores</span><br>
+              </p>
+              <p class="description"><!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. -->
+                <%= desc %>
+              </p>
+              <div class="line"></div>
+              <div class="button-footer">
+                    <div class="buttons">
+                      <a href="/bot/<%= client.user.id %>" class="button-footer-link" style="margin-left: -4%;">Ver</a>
+                    <a href="/add/<%= client.user.id %>" class="button-footer-link" style="margin-left: 2%;">Add</a>
+                </div>
+              </div>
+          </div>
+        <% }) %>
+      </div>
+  </div>
+</body>
+</html>

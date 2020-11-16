@@ -1,0 +1,210 @@
+<%- include('blocks/header', {bot: bot, user: user, auth: auth}) %>
+<head>
+    <meta property="og:image" content="https://media.discordapp.net/attachments/742063291831943189/765235347130810469/44fecd205565d8f77e85487d5dfdd0a9.png">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nexlist.glitch.me/">
+    <meta property="og:description" content="Nexlist uma botlist completa e facil.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+  }
+  .container {
+    padding: 0%;
+    width: 100% !important;
+    margin: 0%;
+  }
+  .header-div {
+    background-color: #2C2F33 !important;
+    width: 113%;
+    margin-left: 0%;
+    padding: 5%;
+  }
+  .header-text {
+    margin-left: 35%;
+  }
+  .info-div {
+    background-color: #2C2F33 !important;
+    width: 113%;
+    margin-left: 0%;
+  }
+  .blue-text{
+    color: #b6bef1 !important;
+    margin-bottom: 0% !important;
+    text-decoration: none !important;
+    font-size: 1.0em;
+  }
+  
+  .bold {
+    font-weight: 900;
+  }
+  .bot-idText {
+    margin-left: 10%;
+  }
+  .fix {
+    color: white !important; 
+    margin-left: 28%;
+    border-radius: 6px !important;
+    background-color: #23272A !important;
+    border: 1px !important;
+    width: 22% !important;
+    height: 2.8rem;
+    margin-top: -2%
+  }
+  .line {
+    margin-top: 1% !important;
+    margin-bottom: 2% !important;
+    border: 1px solid #ccd6f8 !important;
+    width: 50%;
+  }
+  .text-fix {
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.60em;
+    margin-bottom: 0;
+    margin-top: -2%;
+  }
+  .btn {
+    border-radius: 4px !important;
+  }
+  .btn:hover {
+    background-color: #2C2F33 !important;
+    box-shadow: 0px 0px 0px transparent !important;
+  }
+  .important {
+    color: red;
+  }
+  .select-language {
+    background-color: #23272A;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .fix-select {
+    margin-top: -4%;
+  }
+  .coment_input {
+    background-color: #23272A;
+    border: 2px solid transparent;
+    padding: 5px;
+    color: white;
+    margin-top: -4px;
+    margin-bottom: 0px;
+    min-height: 100px;
+    max-height: 100px;
+    resize: none;
+    width: 22%;
+    margin-left: 28%;
+    border-radius: 6px;
+  }
+  .btn_yes {
+    border-radius: 3px !important;
+    background-color: #7289DA !important;
+  }
+  .btn_not {
+    border-radius: 3px !important;
+  }
+</style>
+
+<script s>console.log("CIO")</script>
+<body>
+  <div class="container">
+    <div class="header-div">
+      <h1 class="header-text">Editando o Bot</h1>
+    </div>
+    <div class="info-div">
+      <div class="bot-idText">
+        <form method="post">
+          <label for="prefix" class="blue-text">Prefixo <spam class="important">*</spam></label>
+          <input class="form-control fix" type="text" id="prefix" name="prefix" maxlength="20" placeHolder="!">
+          <p class="text-fix">O prefixo que o seu bot responde</p>
+          
+          <div class="line"></div>
+          <label for="siteURL" class="blue-text">Site URL</label>
+          <input class="form-control fix" type="text" id="siteURL" name="siteURL" maxlength="50" placeHolder="https://sitelegal.com/">
+          <p class="text-fix">Site do bot, não obrigatorio</p>
+          
+          <div class="line"></div>
+          <label for="descMIN" class="blue-text">Sobre <spam class="important">*</spam></label>
+          <input class="form-control fix" type="text" id="descMIN" name="descMIN" maxlength="74" placeHolder="Um bot de moderação simples e facil">
+          <p class="text-fix">Descrição pequena <span class="blue-text bold">MAX 74</span></p>
+          
+          <div class="line"></div>
+          <label for="desc" class="blue-text" style="margin-bottom: 2% !important;">Sobre <spam class="important">*</spam></label>
+          <p class="text-fix" style="margin-bottom: -4%;">Descrição completa do seu bot. <span class="blue-text bold">MIN 1300</span></p>
+          <textarea name="desc" class="coment_input" minlength="5" required="" placeholder="Qual descrição?"></textarea>
+          
+          <div class="line"></div>
+          <label for="feedback" class="blue-text" style="margin-bottom: 2% !important;">Feedback</label>
+          <p class="text-fix" style="margin-bottom: 4%;">Ativar/desivar feedback. <spam class="blue-text bold">Off/On</spam></p>
+          <div style="margin-top: -6%">
+            <input style="margin-left: 28%;" type="radio" name="feedback" value="on">On
+          <input style="margin-left: 2%;" margin-left: 28%; type="radio" name="feedback" value="off">Off<br>
+          </div>
+          <div class="line"></div>
+          
+          <button type="button" onclick="window.location.href='/premium" disabled class="btn btn-primary" id="foudas" style="border: 1px;" data-toggle="modal" data-target="#opsmodel">Confirmar</button>
+          <div style="color: black;" class="modal fade" id="opsmodel" tabindex="-1" aria-labelledby="opsmodelsave" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="opsmodelsave">Editar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Você realmente deseja editar o seu bot?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn_not" data-dismiss="modal">Não</button>
+                    <button type="submite" class="btn btn-primary btn_yes">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+    setInterval(() => {
+      if ($("#prefix").val().length >= 1) {
+        $("#foudas").prop("disabled", false);
+      } else {
+        $("#foudas").prop("disabled", true);
+      };
+      
+      if ($("#descMIN").val().length >= 10) {
+        $("#foudas").prop("disabled", false);
+      } else {
+        $("#foudas").prop("disabled", true);
+      };
+      
+      if ($("#desc").val().length >= 1300) {
+        $("#foudas").prop("disabled", false);
+      } else {
+        $("#foudas").prop("disabled", true);
+      };
+    }, 100)
+  </script>
+</body>

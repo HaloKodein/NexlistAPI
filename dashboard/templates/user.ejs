@@ -1,0 +1,296 @@
+<%- include('blocks/header', {bot: bot, user: user, usuario: usuario, auth: auth, db: db}) %>
+<head>
+    <meta property="og:image" content="https://media.discordapp.net/attachments/742063291831943189/765235347130810469/44fecd205565d8f77e85487d5dfdd0a9.png">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nexlist.glitch.me/">
+    <meta property="og:description" content="Nexlist uma botlist completa e facil.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+  }
+  .client-image {
+    width: 250px !important;
+    margin-top: 1% !important;
+    border: 1px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 6px #2C2F33 !important;
+  }
+  .header {
+    border-top: 1px solid grey !important;
+    width: 100% !important;
+  }
+  .username-info {
+    margin-left: 24%;
+    margin-top: -20%;
+  }
+  .badge-info {
+    background-color: #2C2F33;
+    border: 8px solid transparent;
+    border-radius: 50%;
+    width: 60px;
+    margin-left: -7%;
+    margin-top: 16%;
+  }
+  .form-style {
+    max-width: 320px;
+    height: 75px;
+    margin-left: 24%;
+    color: rgba(255, 255, 255, 0.7);
+    overflow: auto;
+  }
+  .linked-off {
+    background-color: #7289DA !important;
+    border: 1px;
+    border-radius: 4px !important;
+  }
+  .linked-off:hover {
+    background-color: #2C2F33 !important;
+  }
+  .content-style {
+    margin-left: 24%;
+  }
+  .prefix-div {
+    margin-top: 2%;
+  }
+  .purple-text {
+    color: purple !important;
+  }
+  .green-text {
+    color: green;
+  }
+  .code-div {
+    font-weight: 800;
+    background-color: #23272A !important;
+    border: 1px solid grey !important;
+    border-radius: 1px !important;
+    color: white;
+  }
+  .responsive {
+    margin-left: 48%;
+    margin-top: -4%;
+  }
+  .badge {
+    background-color: #7289DA !important;
+    border: 1px !important;
+    border-radius: 14px !important;
+    letter-spacing: 0px !important;
+  }
+  .badge-owner {
+    width: 20px !important;
+    border: 1px;
+    border-radius: 50%;
+    margin-left: -5px;
+    margin-right: 2%;
+  }
+  .info-badge {
+    background-color: #7289DA !important;
+    border: 1px !important;
+    border-radius: 3px !important;
+    padding: 9px !important;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .description-bot {
+    background-color: #23272A !important;
+    padding: 2% !important;
+    border: 1px;
+    border-radius: 6px !important;
+    box-shadow: 1px 4px 6px #23272A !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .fix-info {
+    margin-left: 10%;
+    margin-top: -4%;
+    width: 100% !important;
+  }
+  .bot-infoStats {
+    margin-top: -1%;
+  }
+  .library-colorflex {
+    color: #7289da;
+    font-size: 22px;
+  }
+  .diminute {
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .link-before {
+    font-size: 45px !IMPORTANT;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-left: -5%;
+    margin-top: -4%;
+    margin-bottom: -5%;
+  }
+  .coment_input {
+    background-color: #23272A;
+    border: 2px solid rgba(5242, 41245, 4445, .1);
+    padding: 5px;
+    color: white;
+    margin-top: -4px;
+    margin-bottom: 0px;
+    min-height: 110px;
+    max-height: 110px;
+    width: 100%;
+  }
+  .reviews {
+    margin-top: 2%;
+  }
+  .user-image {
+    background-color: black;
+    border-radius: 50%;
+    width: 64px;
+  }
+  .content_input {
+    margin-left: 8%;
+    margin-top: -5%;
+  }
+  .reviews p {
+    color: #888888;
+    font-size: 0.8rem;
+  }
+  .reviews button {
+    margin-left: 88%;
+    margin-top: -3%;
+  }
+  .btn_yes {
+    border-radius: 3px !important;
+    background-color: #7289DA !important;
+  }
+  .btn_not {
+    border-radius: 3px !important;
+  }
+  .badge:hover {
+    color: white !important;
+    text-decoration: none !important;
+  }
+</style>
+<body>
+ <div class="container">
+   <%
+     const id = usuario.id;
+     const botownerID = db.fetch(`BotOwner_${id}`);
+
+     const owner = bot.users.cache.get(botownerID);
+     const botlibrary = db.fetch(`BotLibrary_${id}`);
+
+     const botdesc = db.fetch(`BotDesc_${id}`);
+     const botprefix = db.fetch(`BotPrefix_${id}`);
+     const botdescmin = db.fetch(`BotDescmin_${id}`);
+
+     const votus = db.fetch(`BotViews_${id}`);
+     const feed = db.fetch(`FeedBackOPS_${id}`);
+
+     if (!votus){
+       var votes = 'N/A';
+     } else {
+       votes = votus;
+     }
+   %>
+   <a href="https://nexlist.glitch.me/bots" class="link-before btn linked-off">
+     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+    </svg>
+   </a>
+   <div class="header">
+     <img class="client-image" src="<%= usuario.displayAvatarURL({dynamic:true,size:1024,format: 'png'}) %>">
+     <!--<img class="badge-info" src="https://cdn.glitch.com/ba84bf22-2085-4b44-8650-b0acc3879203%2Fstatus-online.png">-->
+     <h2 class="username-info" style="margin-bottom: 5px"><%= usuario.username %>
+       <button class="code-div">
+         <%= votes %> Views
+       </button><br>
+       <spam class="library-colorflex">
+         <%= botlibrary %>
+       </spam>
+     </h2>
+     <div class="form-style">
+       <% if (botdescmin) { %>
+         <p class="diminute"><%= botdescmin %></p>
+       <% } else { %>
+         <p class="diminute">Lorem ypsum do not use pc for each not current user now</p>
+       <% } %>
+     </div>
+     <div class="content-style">
+       <a href="https://nexlist.glitch.me/add/<%= id %>" class="linked-off btn">Add</a>
+       <a href="#" class="linked-off btn">Votar</a>
+     </div>
+     <div class="prefix-div">
+       <p>Prefixo do bot <span class="code-div purple-text" style="padding: 2px;"><%= botprefix %> Customizable</span></p>
+       <p class="responsive">Criado por <a href="/user/<%= owner.id %>" class="badge"><img class="badge-owner" src="<%= owner.displayAvatarURL({dynamic:true}) %>"><%= owner.tag %></a></p>
+     </div>
+     <div class="bot-infoStats">
+       <p><span class="info-badge">N/A Servidores</span></p>
+       <p class="fix-info"><span class="info-badge">N/A Usuarios</span></p>
+     </div>
+     <div class="description-bot">
+       <p class="description-h2">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+         <br>
+         The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+       </p>
+     </div>
+     <% if(feed == "on"){ %>
+       <% if (auth) { %>
+       <div class="reviews">
+          <h3>
+             Feeds do bot
+           </h3>
+           <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.jpeg?size=1024" class="user-image feedback">
+           <form action="https://nexlist.glitch.me/bot/<%= id %>" method="post" class="content_input">
+             <textarea name="content" class="coment_input" minlength="5" required="" placeholder="Qual sera o seu feedback para o bot <%= usuario.username %>?"></textarea>
+             <p>O seu feeback sera enviado para os devs do bot!</p>
+             
+             <button type="button" class="btn linked-off" data-toggle="modal" data-target="#opsmodel">Enviar</button>
+             
+             <div style="color: black;" class="modal fade" id="opsmodel" tabindex="-1" aria-labelledby="opsmodelsave" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="opsmodelsave">Feedback</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Você realmente deseja enviar o feedback?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn_not" data-dismiss="modal">Não</button>
+                    <button type="submite" class="btn btn-primary btn_yes">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </form>
+         </div>
+       <% } %>
+     <% } else { %>
+       
+     <% } %>
+   </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+    $(document).on("ready", () => {
+      <% db.add(`BotViews_${id}`, 1); %>
+    });
+  </script>
+</body>

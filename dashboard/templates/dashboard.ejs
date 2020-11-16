@@ -1,0 +1,316 @@
+<%- include('blocks/header', {bot: bot, user: user, auth: auth}) %>
+<head>
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/747251137421377546/4b7e7bc89a588d559ab52cbaf71f867a.webp?size=128">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nexlist.glitch.me/">
+    <meta property="og:description" content="Nexlist uma botlist completa e facil.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+  }
+  .container {
+    display:flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .container .header {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    margin-bottom: 4%;
+  }
+  .container .header .user-header_image {
+    width: 160px;
+    border-radius: 50%;
+    border: 3px solid #23272A;
+  }
+  .header .username_display {
+    align-self: flex-end;
+    margin-bottom: 0px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+  }
+  .header .username_display h3 {
+    margin-top: 5%;
+    font-weight: 600;
+  }
+  .header .username_display h3 spam {
+    color: #AD91FF;
+  }
+  .container .content {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    background-color: #23272A;
+    border-top: 1px solid rgba(1255, 5215, 1251, .1);
+    border-radius: 3px;
+    flex-direction: column;
+  }
+  .container .content .title_display {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: start;
+    margin-left: 2%;
+    color: rgba(412412410, 4124120, 4124214120, .5);
+  }
+  .container .content .content_display {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    margin-bottom: 2%;
+  }
+  .container .content .content_display .card_bot {
+    width: 25%;
+    height: auto;
+    min_width: 25%;
+    background-color: #2C2F33;
+    border-radius: 3px;
+    box-shadow: 3px 5px 8px #23272A;
+    margin-left: 2%;
+    float: left;
+    flex-direction: column;
+  }
+  .bot_header{
+    width: 100%;
+    height: 30%;
+  }
+  .bot_content {
+    width: 100%;
+    height: 60%;
+    padding: 0px 5px 0px 5px;
+  }
+  .bot_footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #2C2F33;
+  }
+  <% if (user.options !== false) { %>
+  <% const client = bot.users.cache.get(user.options.bots[0].id[0]) %>
+  .bot_header section .img-return {
+    width: auto;
+    height: 122px;
+    background-image: url(<%= client.displayAvatarURL({dynamic:true}) %>);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  <% } %>
+  .bot_header section .img-return:hover {
+    -webkit-filter: blur(1px);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation: zoomin 2s linear;
+    animation: zoomin 10s linear;
+    animation-fill-mode: forwards;
+  }
+  .bot_content section h3, p {
+    margin-left: 2%;
+  }
+  ._btn {
+    background-color: transparent;
+    padding: 5px 45px 5px 45px;
+    color: white;
+    border: 3px solid #AD91FF;
+    border-radius: 6px;
+  }
+  ._btn:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #AD91FF;
+  }
+  .fix_desc {
+    margin-bottom: -8% !important;
+  }
+  h1 {
+    margin-bottom: 0px;
+  }
+  @media (max-width: 900px){
+    .container .content .content_display .card_bot {
+      width: 40%;
+      height: auto;
+      min_width: 40%;
+      background-color: #2C2F33;
+      border-radius: 3px;
+      box-shadow: 3px 5px 8px #23272A;
+      margin-left: 2%;
+      float: left;
+      flex-direction: column;
+    }
+    .header .username_display h3 {
+      margin-top: 5%;
+      font-weight: 600;
+    }
+    .container .content {
+      display: flex;
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+      background-color: #23272A;
+      border-top: 1px solid rgba(1255, 5215, 1251, .1);
+      border-radius: 3px;
+      flex-direction: column;
+      margin-top: 3%;
+  }
+  }
+  
+  @media (max-width: 800px){
+      .container .content .content_display .card_bot {
+        width: 100%;
+        height: auto;
+        min_width: 100%;
+        background-color: #2C2F33;
+        border-radius: 3px;
+        box-shadow: 3px 5px 8px #23272A;
+        margin-left: 2%;
+        float: left;
+        flex-direction: column;
+      }
+      .header .username_display h3 {
+        margin-top: 5%;
+        font-weight: 600;
+      }
+      .container .content {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        background-color: #23272A;
+        border-top: 1px solid rgba(1255, 5215, 1251, .1);
+        border-radius: 3px;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+  }
+  
+  @media (max-width: 200px){
+    .container .content .content_display .card_bot {
+      width: 100%;
+      height: auto;
+      min_width: 100%;
+      background-color: #2C2F33;
+      border-radius: 3px;
+      box-shadow: 3px 5px 8px #23272A;
+      margin-left: 2%;
+      float: left;
+      flex-direction: column;
+    }
+    .header .username_display h3 {
+      margin-top: 5%;
+      font-weight: 600;
+    }
+    .container .content {
+      display: flex;
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+      background-color: #23272A;
+      border-top: 1px solid rgba(1255, 5215, 1251, .1);
+      border-radius: 3px;
+      flex-direction: column;
+      margin-top: 3%;
+  }
+    ._btn {
+      background-color: transparent;
+      padding: 0px 30px 0px 30px;
+      color: white;
+      border: 3px solid #AD91FF;
+      border-radius: 6px;
+    }
+  }
+  @-webkit-keyframes zoomin {
+    0% {
+      -webkit-transform: scale(1.01);
+      transform: scale(1.01);
+    }
+    5% {
+      -webkit-transform: scale(1.01);
+      transform: scale(1.01);
+    }
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="avatar_display">
+        <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.jpeg?size=1024" class="user-header_image">
+      </div>
+      <div class="username_display">
+        <h3>
+          <%= user.username %><spam>#<%= user.discriminator %></spam>
+        </h3>
+      </div>
+    </div>
+    <div class="content">
+      <div class="title_display">
+        <h1>
+          Bots
+        </h1>
+      </div>
+      <div class="content_display">
+        <% if (user.options == false) { %>
+          <h1 style="margin-left: 2%;">
+          Você não possue bots!  
+          </h1>
+        <% } else { %>
+          <% user.options.bots.forEach(e => { %>
+          <%
+            const botuser = bot.users.cache.get(e.id[0]);
+            const desc = db.fetch(`BotDescmin_${botuser.id}`);
+          %>
+            <div class="card_bot">
+              <div class="bot_header">
+                <section>
+                  <div class="img-return"></div>
+                </section>
+              </div>
+              <div class="bot_content">
+                <section>
+                  <h3><%= botuser.username %></h3>
+                  <p class="fix_desc">
+                    <%= desc %>
+                  </p>
+                </section>
+              </div>
+              <div class="bot_footer">
+                <section style="margin-bottom: 6%;">
+                  <a class="edit_btn _btn" href="https://nexlist.glitch.me/edit/<%= botuser.id %>">Editar</a>
+                  <a class="view_btn _btn" href="https://nexlist.glitch.me/bot/<%= botuser.id %>">Ver</a>
+                </section>
+              </div>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
+  </div>   
+</body>

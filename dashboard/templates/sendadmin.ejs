@@ -1,0 +1,345 @@
+<%- include('blocks/header', {bot: bot, user: user, auth: auth, usuario: usuario}) %>
+<head>
+    <meta property="og:image" content="https://media.discordapp.net/attachments/742063291831943189/765235347130810469/44fecd205565d8f77e85487d5dfdd0a9.png">
+    <meta property="og:title" content="<%= bot.user.username %>">
+    <meta name="theme-color" content="#1d1e28">
+    <meta property="og:url" content="https://nexlist.glitch.me/">
+    <meta property="og:description" content="Nexlist uma botlist completa e facil.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.discordapp.com/attachments/756985061534072941/767492723317407774/now-ui-kit.js"></script>
+    <title><%= bot.user.username %></title>
+</head>
+<style>
+  @import url("https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css");
+  @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/761970807298850846/main.css");
+  @import url("https://cdn.discordapp.com/attachments/756985061534072941/767493430443638784/now-ui-kit.css");
+  body {
+    border-top: 1px solid black !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: 'Montserrat', 'Tahoma' !important;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+  .row-left {
+    background: #2C2F33;
+    height: 100%;
+    width: 5vw;
+  }
+  
+  .team-botlist {
+    margin-left: 40%;
+    margin-top: 12%;
+    width: 100%;
+
+  }
+  .team-div {
+    display: flex;
+    width: 100%;
+    margin-left: -12%;
+   
+    /*margin-left: -12%;
+    margin-top: 10%;
+    padding: 5%;*/
+  }
+  .img-team{
+    width: 100px !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    background-color: black !important;
+    
+  }
+  .container {
+    display: flex;
+    justify-items: center;
+    width: 100%;
+  }
+  .p-time {
+    margin-left: 10%;
+  }
+  .time-names {
+    margin-top: 15%;
+    margin-left: -12%;
+    text-align: center;
+  }
+  .welcome-page {
+    margin-left: 46% !important;
+  }
+  input:focus {
+    background-color: #23272A !important;
+  }
+  .control-page {
+    margin-top: 3%;
+    border: 1px solid black;
+    padding: 2%;
+    width: 100%;
+  }
+  .fix-form {
+    background-color: #2C2F33 !important;
+    border: 1px !important;
+    border-radius: 3px !important;
+    color: white !important;
+    width: 80% !important;
+  }
+  .fix-button {
+    border: 1px !important;
+    border-radius: 3px !important;
+    background-color: #2C2F33 !important;
+    padding: 5px !important;
+    margin-left: 82%;
+    margin-top: -4%;
+  }
+  .fix-button:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+  .row-centerBody {
+    background: #2C2F33;
+    height: 100%;
+    width: 95vw;
+    margin-left: 5vw;
+    margin-top: -100%;
+    border-left: 3px solid rgba(0, 0, 0, .1);
+    border-bottom: 3px solid rgba(0, 0, 0, .1);
+    padding: 16px;
+  }
+  .bg-transparent {
+    background-color: #2C2F33 !important;
+  }
+  .navbar {
+    margin-bottom: 0px;
+    border-bottom: 3px solid rgba(0, 0, 0, .1);
+  }
+  .box-image:hover {
+    animation: imageBox 5s paused;
+  }
+  .box-image {
+    border-radius: 50%;
+  }
+  .box-guilds {
+    padding: 5%;
+  }
+  .row-centerBody p spam {
+    color: purple;
+    font-weight: 900;
+  }
+  
+  .username {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  
+  .backVefield i {
+    color: #7289DA;
+  }
+  
+  .backVefield {
+    margin-left: 70%;
+    margin-top: -28%;
+  }
+  
+  .link-before {
+    font-size: 45px !IMPORTANT;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-left: -5%;
+    margin-top: -4%;
+    margin-bottom: -5%;
+  }
+  
+  .linked-off {
+    background-color: #7289DA !important;
+    border: 1px;
+    border-radius: 4px !important;
+  }
+  
+  .linked-off:hover {
+    background-color: #2C2F33 !important;
+  }
+  
+  @keyframes imageBox {
+    0%{
+      border-radius: 13px;
+    }
+    25% {
+      border-radius: 16px;
+    }
+  }
+  .embed_private {
+    background-color: #23272A;
+    border-left: 5px solid black;
+    border-radius: 5px;
+    margin-top: 2%;
+    width: 50vw;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    color: #dcddde;
+  }
+  .image_private {
+    text-align-last: end;
+    margin-right: 0.8%;
+    margin-top: 0.8%;
+  }
+  .image_private img {
+    border-radius: 5px;
+  }
+  .title_private {
+    width: 75%;
+    margin-top: -20%;
+    font-size: 10px;
+  }
+  .title_private h3, spam {
+    font-weight: 600;
+    color: white;
+  }
+  .title_private h3 {
+    margin-left: 8%;
+    margin-top: -6%;
+    color: white;
+  }
+  .title_private img {
+    width: 30px;
+    border-radius: 50%;
+  }
+  .title_private p {
+    margin-top: -5%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5%;
+  }
+  .description_private {
+    width: 75%;
+    margin-top: -8%;
+  }
+  .footer_private p {
+    margin-bottom: 0px;
+    font-size: 12px;
+  }
+  .dc_link {
+    color: #00b0f4;
+  }
+  .dc_link:hover {
+    color: #00b0f4;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="row-left">
+      <% bot.guilds.cache.get("771205605511397388").members.cache.filter(e => e.user.bot === true).forEach(client => {
+      if (client.id !== usuario.id) return;
+      const isVerifield = db.fetch(`Verfield_${client.id}`)
+      if (client.user.id == bot.user.id) return;
+      %>
+      <div class="box-guilds">
+        <a href="https://nexlist.glitch.me/admin/<%= client.id %>" class="custom">
+          <% if (client.icon !== null){ %>
+            <img class="box-image" src="<%= client.user.displayAvatarURL({dynamic:true,size:1024,format: 'jpg'}) %>" title="<%= client.user.username %>">
+          <% } else { %>
+            <img class="box-image" src="https://i.imgur.com/2otMem9.png" title="<%= client.user.username %>">
+          <% } %>
+        </a>
+        <% if (isVerifield == 'true') { %>
+          <div class="backVefield">
+            <i>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-patch-check-fll" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984a.5.5 0 0 0-.708-.708L7 8.793 5.854 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+              </svg>
+            </i>
+          </div>
+        <% } %>
+      </div>
+      <% }); %>
+      <div class="row-centerBody">
+        <div class="username">
+          <h1>
+            <a href="https://nexlist.glitch.me/admin" class="link-before" style="color: white !important;">
+             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+            </svg>
+           </a>
+           <%= usuario.username %>
+          </h1>
+        </div>
+        <div class="control-page">
+          <form action="accept/<%= usuario.id %>" method="post">
+            <label for="message">Aprovar</label>
+            <input class="form-control fix-form" id="message" name="message" placeHolder="Qual mensagem?">
+            <button type="submit" disabled onclick="window.location.href='/accept/<%= usuario.id %>" class="btn btn-primary fix-button" id="accept" style="padding: 15px !important;margin-top: -7%;">Confirmar</button>
+          </form>
+
+          <form action="reject/<%= usuario.id %>" method="post">
+            <label for="reason">Reprovar</label>
+            <input class="form-control fix-form" id="reason" name="reason" style="margin-top: 5px;" placeHolder="Qual o motivo?">
+            <button type="submit" disabled onclick="window.location.href='/reject/<%= usuario.id %>" class="btn btn-primary fix-button" id="reject" style="padding: 15px !important;margin-top: -7%;">Confirmar</button>
+          </form>
+        </div>
+        <% 
+          const id = usuario.id;
+          const botowner = db.fetch(`BotOwner_${id}`);
+          const botprefix = db.fetch(`BotPrefix_${id}`);
+          const botsite = db.fetch(`BotSite_${id}`);
+          const botdescmin = db.fetch(`BotDescmin_${id}`);
+          const botviews = db.fetch(`BotViews_${id}`);
+          
+          const bt = bot.users.cache.get(id);
+          const btowner = bot.users.cache.get(botowner)
+        %>
+        <% if (user){ %>
+          <div class="embed_private">
+            <div class="image_private">
+              <img src="<%= btowner.displayAvatarURL({dynamic:true}) %>">
+            </div>
+            <div class="title_private">
+              <img src="<%= bt.displayAvatarURL({dynamic:true}) %>">
+              <h3>Dashboard Log</h3>
+              <p class="bold">Bot Adicionado</p>
+            </div>
+            <div class="description_private">
+              <p>
+                <br>ID: <%= id %>
+                <br>Author: <%= btowner.username %>
+                <br>Prefixo: <%= botprefix %>
+                <br>Link: <a href="/add/<%= id %>" class="dc_link">Adicione</a><br>
+                <br><%= botdescmin %>
+              </p>
+            </div>
+            <div class="footer_private">
+              <p>
+                <%= bt.username %>
+              </p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+    setInterval(() => {
+      if ($("#message").val().length >= 10){
+        $("#accept").prop("disabled", false);
+      } else {
+        $("#accept").prop("disabled", true);
+      };
+      
+      if ($("#reason").val().length >= 10) {
+        $("#reject").prop("disabled", false);
+      } else {
+        $("#reject").prop("disabled", true);
+      };
+    }, 100)
+  </script>
+</body>

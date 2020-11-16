@@ -1,0 +1,274 @@
+/* By Codein dont remove credits... */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1D1E28;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    border-top: 6px #8AFF00 solid;
+    font-size: 16px;
+}
+
+.nav-link {
+     font-size: 14px;
+     background: transparent;
+     font-family: Lato, sans-serif;
+     text-transform: capitalize;
+ }
+ .nav-link:hover {
+     background: transparent;
+     color: #8AFF00;
+     font-weight: bold;
+ }
+
+ .login-btn {
+     border: 2px solid #8AFF00;
+     font-size: 10px;
+ }
+ .login-btn:hover {
+     background: #8AFF00;
+ }
+.navbar {
+    box-shadow: none
+}
+
+.navbar-brand {
+    font-size: 25px
+}
+
+.navbar-toggler-icon {
+    color: #fff
+}
+
+.btn {
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: #AD91F
+}
+.btn-secondary {
+    background-color: #2C2F33
+}
+.heading {
+    padding: 160px 50px;
+    color: #fff;
+    background-image: url("https://cdn.discordapp.com/attachments/756985061534072941/761971775726419988/wavy-purple-by-codein.svg");
+    background-position: bottom;
+    background-size: 300%;
+    background-repeat: no-repeat;
+}
+
+.title {
+    line-height: 90px;
+    margin-bottom: -2px;
+    font-size: 36px
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.features {
+    text-align: center;
+    background: #8AFF00;
+    padding: 60px 50px;
+    background-image: url("https://cdn.discordapp.com/attachments/756985061534072941/761971807888080896/wavy-dark-by-codein.svg");
+    background-position: bottom;
+    background-size: 200%;
+    background-repeat: no-repeat;
+}
+.features .title {
+    font-size: 40px;
+    color: #ffffff;
+    line-height: 70px;
+}
+
+.features .subtitle {
+    font-size: 20px;
+    color: #a2a8bd;
+}
+
+.features .card-body {
+    text-align: left;
+}
+
+.features .card-title {
+    margin: 0 0 -3px;
+}
+.cards {
+    margin-top: 30px;
+}
+
+.card {
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #8AFF00;
+}
+
+.statistics {
+    text-align: center;
+    padding-top: 300px;
+}
+
+.statistics .card-body{
+    padding: 0;
+    height: 280;
+    width: 332;
+    max-height: 280;
+    max-width: 332;
+}
+
+.statistics .title {
+    font-size: 40px;
+    color: #ffffff;
+    line-height: 70px;
+}
+
+.statistics .subtitle {
+    font-size: 20px;
+    color: #a2a8bd;
+}
+
+.card.statistic {
+    background: transparent;
+    box-shadow: none;
+    color: #f7f7f7;
+}
+
+
+.page_end {
+    background-image: url("assets/wavy-light-codein.svg");
+    background-position: bottom;
+    background-size: 200%;
+    background-repeat: no-repeat;
+}
+.start {
+    padding: 60px 50px
+}
+
+.start .card {
+    background: transparent;
+    color: #f6f9ff;
+}
+
+.features .card {
+    background: #1D1E28;
+    border-radius: 22px;
+    border: 4px solid #8AFF00;
+}
+.features .card-text {
+color: rgba(255, 255, 255, 0.46)
+}
+
+.features .card-body {
+    padding: 40px 40px 40px 30px;
+}
+
+.navbar-toggler-icon {
+    color: #fff
+}
+.footer {
+    text-align: center;
+    padding: 5px 6px;
+    color: #ecf2ff;
+    padding: 30px 30px
+}
+
+.footer .nouridio {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 5px;
+    letter-spacing: 0.15em;
+    font-variant: small-caps;
+}
+
+.footer .nouridio a {
+    color: #8AFF00;
+    text-decoration: none;
+}
+
+.footer .bot-footer {
+    text-align: center;
+    color: #a2a8bd
+}
+
+.admin-h1  {
+  color: white;
+}
+
+.div-admin {
+  color: white;
+}
+
+.admin-page {
+  box-shadow: 1px 4px 6px #8AFF00;
+  background-color: #1D1E28;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.dashboard-page {
+  box-shadow: 1px 4px 6px #8AFF00;
+  background-color: #1D1E28;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.guild-icons {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.guild-names {
+  margin-top: -17%;
+  margin-bottom: 14%;
+  margin-left: 28%;
+}
+
+.guildor {
+  border: 1px solid black;
+  border-radius: 12%;
+  width: 75px;
+  margin-left: 26%;
+  margin-bottom: 3%;
+}
+
+.guild-name-dashboard {
+  text-align: center;
+}
+
+.user-img {
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-left: 42%;
+  width: 227px;
+  height: 227;
+}
+
+.guilds-page {
+    box-shadow: 1px 4px 6px #8AFF00;
+    background-color: #1D1E28;
+    width: 22%;
+    margin-left: 4%;
+}
+
+.image-guilds-page {
+  margin-left: -15%;
+  margin-top: -30%;
+}
